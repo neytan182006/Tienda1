@@ -4,10 +4,7 @@
  */
 package com.tienda.domain;
 
-/**
- *
- * @author allam
- */
+
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
