@@ -1,4 +1,4 @@
-package com.tienda;
+package com.tienda.tienda;
 
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.storage.Storage;

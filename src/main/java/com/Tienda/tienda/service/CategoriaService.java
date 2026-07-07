@@ -1,14 +1,16 @@
-package com.tienda.service;
 
-import com.tienda.domain.Categoria;
-import com.tienda.repository.CategoriaRepository;
-import java.io.IOException;
-import java.util.List;
+package com.tienda.tienda.service;
+
 import java.util.Optional;
-import org.springframework.dao.DataIntegrityViolationException;
+import java.io.IOException;
+import com.tienda.tienda.domain.Categoria;
+import com.tienda.tienda.repository.CategoriaRepository;
+import java.util.List;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.web.multipart.MultipartFile;
+
 
 @Service
 public class CategoriaService {
@@ -17,6 +19,7 @@ public class CategoriaService {
     private final CategoriaRepository categoriaRepository;
     private final FirebaseStorageService firebaseStorageService;
 
+    // Inyección por constructor (No requiere @Autowired en Spring moderno)
     public CategoriaService(CategoriaRepository categoriaRepository, FirebaseStorageService firebaseStorageService) {
         this.categoriaRepository = categoriaRepository;
         this.firebaseStorageService = firebaseStorageService;
@@ -24,13 +27,13 @@ public class CategoriaService {
 
     @Transactional(readOnly = true)
     public List<Categoria> getCategorias(boolean activo) {
-        if (activo) { //Sólo activos...            
+        if (activo) { //Sólo activos...
             return categoriaRepository.findByActivoTrue();
         }
+
         return categoriaRepository.findAll();
     }
-
-    @Transactional(readOnly = true)
+ @Transactional(readOnly = true)
     public Optional<Categoria> getCategoria(Integer idCategoria) {
         return categoriaRepository.findById(idCategoria);
     }

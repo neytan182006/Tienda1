@@ -1,4 +1,4 @@
-package com.tienda.service;
+package com.tienda.tienda.service;
 
 import com.google.cloud.storage.BlobId;
 import com.google.cloud.storage.BlobInfo;
@@ -14,6 +14,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 @Service
 public class FirebaseStorageService {
+
     @Value("${firebase.bucket.name}")
     private String bucketName;
     @Value("${firebase.storage.path}")
@@ -49,7 +50,7 @@ public class FirebaseStorageService {
     }
 
     //Convierte un MultipartFile a un archivo temporal en el servidor.
-     private File convertToFile(MultipartFile multipartFile) throws IOException {
+    private File convertToFile(MultipartFile multipartFile) throws IOException {
         File tempFile = File.createTempFile("upload-", ".tmp");
         try (FileOutputStream fos = new FileOutputStream(tempFile)) {
             fos.write(multipartFile.getBytes());

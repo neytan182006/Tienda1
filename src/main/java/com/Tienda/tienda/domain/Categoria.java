@@ -1,16 +1,22 @@
 
-package com.tienda.domain;
+package com.tienda.tienda.domain;
+
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import java.io.Serializable;
 import lombok.Data;
+import java.util.List;
+
+
+
 
 @Data
 @Entity
@@ -36,4 +42,8 @@ public class Categoria implements Serializable {
 
     @Column(name = "activo")
     private Boolean activo;
+    
+    //CLASE 6 - RELACION DE UNO A MUCHOS 
+    @OneToMany(mappedBy = "categoria")
+    private List<Producto>productos; 
 }
