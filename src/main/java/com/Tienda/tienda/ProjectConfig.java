@@ -1,4 +1,4 @@
-package com.tienda.tienda;
+package com.Tienda.tienda;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

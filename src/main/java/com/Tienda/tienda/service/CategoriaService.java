@@ -1,10 +1,10 @@
 
-package com.tienda.tienda.service;
+package com.Tienda.tienda.service;
 
 import java.util.Optional;
 import java.io.IOException;
-import com.tienda.tienda.domain.Categoria;
-import com.tienda.tienda.repository.CategoriaRepository;
+import com.Tienda.tienda.domain.Categoria;
+import com.Tienda.tienda.repository.CategoriaRepository;
 import java.util.List;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

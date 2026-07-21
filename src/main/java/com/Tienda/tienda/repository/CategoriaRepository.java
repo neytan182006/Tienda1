@@ -1,12 +1,12 @@
 
-package com.tienda.tienda.repository;
+package com.Tienda.tienda.repository;
 
 /**
  *
  * @author allam
  */
 
-import com.tienda.tienda.domain.Categoria;
+import com.Tienda.tienda.domain.Categoria;
 import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
